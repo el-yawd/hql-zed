@@ -1,0 +1,6 @@
+id = "hql"
+name = "HQL syntax highlighter"
+version = "0.0.1"
+schema_version = 1
+authors = ["Diego Reis <el-yawd@proton.me>"]
+repository = "https://github.com/el-yawd/hql-zed"
