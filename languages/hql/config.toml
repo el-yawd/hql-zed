@@ -1,0 +1,4 @@
+name = "HQL"
+grammar = "hql"
+path_suffixes = ["hql", "hx"]
+line_comments = ["//"]
