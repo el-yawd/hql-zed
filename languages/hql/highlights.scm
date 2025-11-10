@@ -8,21 +8,17 @@
   "IN"
   "MIGRATION"
   "DROP"
-  "INDEX"
   "DEFAULT"
-  "OPTIONAL"
   "Properties"
-  "schema"
+  "schema::"
   "AS"
   "WHERE"
   "EXISTS"
   "ORDER"
   "RANGE"
   "UPDATE"
-  "FIRST"
   "AGGREGATE_BY"
   "GROUP_BY"
-  "PREFILTER"
 ] @keyword
 
 ; Boolean operators
@@ -74,14 +70,10 @@
 
 ; Graph operations
 [
-  "OutE"
-  "InE"
-  "FromN"
-  "ToN"
-  "FromV"
-  "ToV"
   "Out"
   "In"
+  "InE"
+  "OutE"
   "ShortestPath"
   "ShortestPathDijkstras"
   "ShortestPathBFS"
@@ -109,8 +101,8 @@
 [
   "N::"
   "E::"
+
   "V::"
-  "_::"
 ] @namespace
 
 ; Entity type markers
@@ -135,16 +127,23 @@
   "U64"
   "U128"
   "ID"
-  "Date"
 ] @type.builtin
 
 ; Constants
 [
-  "NOW"
-  "NONE"
   "true"
   "false"
 ] @constant.builtin
+
+; Special nodes that don't have direct terminal equivalents
+(index) @keyword
+(none) @constant.builtin
+(now) @constant.builtin
+(date_type) @type.builtin
+(ID_TYPE) @type.builtin
+(first) @keyword
+(asc) @constant
+(desc) @constant
 
 ; Literals
 (string_literal) @string
@@ -164,7 +163,6 @@
   "=>"
   "::"
   "!"
-  ".."
 ] @operator
 
 ; Punctuation
@@ -187,25 +185,21 @@
   ">"
 ] @punctuation.bracket
 
+; Spread operator
+(spread_object) @operator
+
 ; Macros
 [
-  "#[mcp]"
-  "#[model"
+  "#["
 ] @attribute
-
-; Order types
-[
-  "Asc"
-  "Desc"
-] @constant
 
 ; Query parameters
 (param_def
-  name: (identifier) @parameter)
+  (identifier) @parameter)
 
 ; Field definitions
 (field_def
-  name: (identifier) @property)
+  (identifier) @property)
 
 ; Mapping fields in object steps
 (mapping_field
@@ -213,8 +207,8 @@
 
 ; Function calls
 (math_function_call
-  name: (math_function_name) @function.builtin)
+  (math_function_name) @function.builtin)
 
 ; Schema versions
 (schema_version
-  (integer) @number.version)
+  (integer) @number)

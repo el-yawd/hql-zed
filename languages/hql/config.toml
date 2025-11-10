@@ -1,4 +1,4 @@
 name = "HQL"
 grammar = "hql"
-path_suffixes = ["hql", "hx"]
+path_suffixes = ["hx"]
 line_comments = ["//"]

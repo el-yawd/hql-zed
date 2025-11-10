@@ -7,5 +7,5 @@ repository = "https://github.com/el-yawd/hql-zed"
 description = "HQL syntax highlighter"
 
 [grammars.hql]
-repository = "https://github.com/el-yawd/hql-tree-sitter"
-rev = "f4498d576c3770151ab5b61e98add1b79716d833"
+repository = "https://github.com/el-yawd/tree-sitter-hql"
+rev = "8004a59420796ae311bfa4cc30a2e3be611ce046"
